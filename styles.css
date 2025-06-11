@@ -256,10 +256,13 @@ body {
 }
 
 .about h2 {
+    position: relative;
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 4rem;
-    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .about h2::after {
@@ -272,6 +275,7 @@ body {
     height: 3px;
     background: var(--gradient);
     border-radius: 3px;
+    animation: widthGrow 1s ease-out forwards;
 }
 
 .about-content {
@@ -953,16 +957,7 @@ footer span {
 
 /* Section Headers Animation */
 .about h2::after, .education h2::after, .projects h2::after, .contact h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background: var(--gradient);
-    border-radius: 3px;
-    animation: widthGrow 1s ease-out forwards;
+    box-shadow: none !important;
 }
 
 @keyframes widthGrow {
