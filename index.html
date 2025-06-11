@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritu Pal - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Ritu Pal</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Ritu Pal</span></h1>
+                <p class="subtitle">AI-ML Engineer | Data Scientist | Web Developer</p>
+                <p class="description">Passionate about turning data into insights and creating beautiful web experiences.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary-btn">View My Work</a>
+                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I'm a Computer Science undergrad wired for AI, ML, and decoding the patterns behind the chaos. From training transformer models to building intuitive dashboards, I love creating things that think and feel smart. I'm also into web dev — crafting responsive, pixel-perfect websites with HTML, CSS, JavaScript, and PHP. Whether it's a clever algorithm or a sleek UI, I believe good tech should be both functional and beautiful. Always experimenting, always learning — let's turn code into something unforgettable.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-content">
+                        <h3>Bachelor of Technology in Computer Science and Engineering (AI & ML)</h3>
+                        <h4>Adani University</h4>
+                        <p class="date">2023 - Present</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-content">
+                        <h3>Diploma in Computer Engineering</h3>
+                        <h4>Government Polytechnic For Girls College</h4>
+                        <p class="date">2020 - 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-skill="Python">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item" data-skill="Java">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-item" data-skill="C">
+                            <i class="fas fa-code"></i>
+                            <span>C</span>
+                        </div>
+                        <div class="skill-item" data-skill="SQL">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-skill="HTML">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML</span>
+                        </div>
+                        <div class="skill-item" data-skill="CSS">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS</span>
+                        </div>
+                        <div class="skill-item" data-skill="JavaScript">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item" data-skill="PHP">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-skill="Machine Learning">
+                            <i class="fas fa-brain"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="skill-item" data-skill="Deep Learning">
+                            <i class="fas fa-network-wired"></i>
+                            <span>Deep Learning</span>
+                        </div>
+                        <div class="skill-item" data-skill="GenAI">
+                            <i class="fas fa-robot"></i>
+                            <span>GenAI</span>
+                        </div>
+                        <div class="skill-item" data-skill="Prompt Engineering">
+                            <i class="fas fa-terminal"></i>
+                            <span>Prompt Engineering</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3><i class="fas fa-chart-line"></i> Data Science & Analytics</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-skill="Pandas">
+                            <i class="fas fa-table"></i>
+                            <span>Pandas</span>
+                        </div>
+                        <div class="skill-item" data-skill="Numpy">
+                            <i class="fas fa-calculator"></i>
+                            <span>Numpy</span>
+                        </div>
+                        <div class="skill-item" data-skill="Scikit-Learn">
+                            <i class="fas fa-cogs"></i>
+                            <span>Scikit-Learn</span>
+                        </div>
+                        <div class="skill-item" data-skill="Matplotlib">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Matplotlib</span>
+                        </div>
+                        <div class="skill-item" data-skill="Seaborn">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Seaborn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Databases</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-skill="Power BI">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Power BI</span>
+                        </div>
+                        <div class="skill-item" data-skill="Excel">
+                            <i class="fas fa-file-excel"></i>
+                            <span>Excel</span>
+                        </div>
+                        <div class="skill-item" data-skill="MySQL">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-accent"></div>
+                    <div class="project-icon glass">
+                        <i class="fas fa-sign-language"></i>
+                    </div>
+                    <h3>Indian Sign Language Detection</h3>
+                    <div class="tech-stack">
+                        <span><i class="fab fa-python"></i> Python</span>
+                        <span><i class="fas fa-brain"></i> TensorFlow</span>
+                        <span><i class="fas fa-network-wired"></i> ResNet50</span>
+                        <span><i class="fas fa-mobile-alt"></i> MobileNetV2</span>
+                    </div>
+                    <ul class="project-details">
+                        <li>Trained deep learning models using Kaggle dataset</li>
+                        <li>Applied data augmentation to reduce overfitting</li>
+                        <li>Improved classification accuracy significantly</li>
+                    </ul>
+                    <a href="https://github.com/ritup04/ISL" class="project-btn" target="_blank"><i class="fas fa-arrow-right"></i> View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-accent"></div>
+                    <div class="project-icon glass">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Skillzy - Skill Swapping Website</h3>
+                    <div class="tech-stack">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                        <span><i class="fab fa-php"></i> PHP</span>
+                    </div>
+                    <ul class="project-details">
+                        <li>Designed a website with Flexbox layout</li>
+                        <li>Maintained visual consistency with gradient theme</li>
+                        <li>Implemented sticky headers for better navigation</li>
+                    </ul>
+                    <a href="https://github.com/ritup04/skillbarter" class="project-btn" target="_blank"><i class="fas fa-arrow-right"></i> View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-accent"></div>
+                    <div class="project-icon glass">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Impact Of Local Events and Economy</h3>
+                    <div class="tech-stack">
+                        <span><i class="fas fa-chart-bar"></i> Power BI</span>
+                        <span><i class="fas fa-chart-pie"></i> Data Visualization</span>
+                    </div>
+                    <ul class="project-details">
+                        <li>Visualized the impact of local events on employment and GDP</li>
+                        <li>Created interactive dashboards for stakeholders</li>
+                        <li>Implemented data-driven insights</li>
+                    </ul>
+                    <a href="https://github.com/ritup04/EvenImpactPowerBI" class="project-btn" target="_blank"><i class="fas fa-arrow-right"></i> View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-content">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/palritu/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/ritup04" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:ritupal1626@gmail.com" target="_blank" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <form action="https://formspree.io/f/yourFormID" method="POST" class="contact-form" autoComplete="off">
+                    <div class="form-group">
+                        <span class="input-icon"><i class="fas fa-user"></i></span>
+                        <input type="text" name="name" required placeholder=" "/>
+                        <label>Name</label>
+                    </div>
+                    <div class="form-group">
+                        <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                        <input type="email" name="email" required placeholder=" "/>
+                        <label>Email</label>
+                    </div>
+                    <div class="form-group">
+                        <span class="input-icon"><i class="fas fa-comment-dots"></i></span>
+                        <textarea name="message" required placeholder=" "></textarea>
+                        <label>Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Made with <span style="color:#ec4899;">&#10084;&#65039;</span> by Ritu Pal. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
