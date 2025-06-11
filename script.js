@@ -23,17 +23,17 @@ function updateThemeIcon(theme) {
 }
 
 // Mobile Navigation
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const navLinksItems = document.querySelectorAll('.nav-links li');
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
 
-hamburger.addEventListener('click', () => {
-    // Toggle navigation
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
+  });
+}
 
 // Close mobile menu when clicking on a link
+const navLinksItems = document.querySelectorAll('.nav-links li');
 navLinksItems.forEach(item => {
     item.addEventListener('click', () => {
         navLinks.classList.remove('active');
