@@ -62,9 +62,9 @@ if (contactForm) {
     });
 }
 
-// Intersection Observer for animations
+// Enhanced Intersection Observer for animations
 const observerOptions = {
-    threshold: 0.1,
+    threshold: 0.15,
     rootMargin: '0px 0px -50px 0px'
 };
 
@@ -80,11 +80,28 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all animated elements
-document.querySelectorAll('.project-card, .timeline-item').forEach((element, index) => {
+document.querySelectorAll('.project-card, .timeline-item, .skills-category, .skill-item, .about-content, .hero-content, .contact-form').forEach((element, index) => {
     if (element.classList.contains('timeline-item')) {
         element.dataset.delay = index * 0.2;
     }
     observer.observe(element);
+});
+
+// Add scroll-triggered animations to sections
+const sections = document.querySelectorAll('section');
+sections.forEach(section => {
+    section.classList.add('fade-in-section');
+});
+
+// Add animation classes to elements
+document.querySelectorAll('.hero h1, .hero .subtitle, .hero .description').forEach((element, index) => {
+    element.classList.add('fade-in-up');
+    element.style.animationDelay = `${index * 0.2}s`;
+});
+
+document.querySelectorAll('.cta-buttons .btn').forEach((element, index) => {
+    element.classList.add('fade-in-up');
+    element.style.animationDelay = `${0.6 + index * 0.2}s`;
 });
 
 // Add active class to navigation links based on scroll position
@@ -113,6 +130,8 @@ window.addEventListener('scroll', () => {
 // Add parallax effect to hero section
 window.addEventListener('scroll', () => {
     const hero = document.querySelector('.hero');
-    const scrolled = window.pageYOffset;
-    hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
+    if (hero) {
+        const scrolled = window.pageYOffset;
+        hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
+    }
 }); 
