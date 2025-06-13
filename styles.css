@@ -939,17 +939,20 @@ body {
 
 /* Footer */
 footer {
-    background: var(--text-color);
-    color: var(--bg-color);
+    background: #222;
+    color: #fff;
     padding: 2rem 0;
     text-align: center;
     font-size: 1.2rem;
     font-weight: 500;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
 }
 
 [data-theme="dark"] footer {
-    background: var(--text-color);
-    color: #000;
+    background: #f3f4f6 !important;
+    color: #222 !important;
 }
 
 footer span {
@@ -1336,7 +1339,11 @@ footer span {
     }
     footer {
         font-size: 1rem;
-        padding: 1.2rem 0;
+        padding: 1.5rem 0 1.5rem 0;
+    }
+    [data-theme="dark"] footer {
+        background: #f3f4f6 !important;
+        color: #222 !important;
     }
 }
 
@@ -1485,8 +1492,12 @@ footer span {
         gap: 0.5rem;
     }
     footer {
-        font-size: 0.85rem;
-        padding: 0.7rem 0;
+        font-size: 0.95rem;
+        padding: 1.2rem 0 1.2rem 0;
+    }
+    [data-theme="dark"] footer {
+        background: #f3f4f6 !important;
+        color: #222 !important;
     }
 }
 
