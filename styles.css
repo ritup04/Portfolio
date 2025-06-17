@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -56,9 +55,6 @@ body {
     color: var(--text-color);
     background-color: var(--background);
     transition: background-color 0.3s ease, color 0.3s ease;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 .container {
@@ -126,8 +122,8 @@ body {
     color: var(--primary-color);
     text-decoration: none;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -200,8 +196,8 @@ body {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -393,7 +389,7 @@ body {
 
 /* Projects Section */
 .projects {
-    padding: 40px 0;
+    padding: 100px 0;
     background: var(--section-bg);
     position: relative;
     overflow: hidden;
@@ -409,7 +405,7 @@ body {
     gap: 2rem;
     margin-top: 2rem;
     position: relative;
-    z-index: 1000;
+    z-index: 1;
 }
 
 .project-card {
@@ -944,23 +940,17 @@ body {
 
 /* Footer */
 footer {
-    background: #222;
-    color: #fff;
+    background: var(--text-color);
+    color: var(--bg-color);
     padding: 2rem 0;
     text-align: center;
     font-size: 1.2rem;
     font-weight: 500;
-    position: relative;
-    z-index: 10;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
-    border-top: 2px solid #e9ecef;
-    flex-shrink: 0;
 }
 
 [data-theme="dark"] footer {
-    background: #f3f4f6 !important;
-    color: #222 !important;
-    border-top: 2px solid #222 !important;
+    background: var(--text-color);
+    color: #000;
 }
 
 footer span {
@@ -1071,8 +1061,8 @@ footer span {
 .skills-category h3 i {
     font-size: 1.8rem;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1347,9 +1337,24 @@ footer span {
         border-radius: 8px;
     }
     footer {
-        font-size: 1rem;
-        padding: 2rem 0 2rem 0;
+        font-size: 0.85rem;
+        padding: 2.5rem 0 2.5rem 0 !important;
         border-top: 2px solid #e9ecef;
+        background: #222 !important;
+        color: #fff !important;
+        position: relative !important;
+        z-index: 100 !important;
+        min-height: 3.5rem !important;
+        height: auto !important;
+        overflow: visible !important;
+        box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+        display: block;
+        text-align: center;
+        white-space: nowrap;
+    }
+    footer span {
+        vertical-align: middle;
+        white-space: nowrap;
     }
     [data-theme="dark"] footer {
         background: #f3f4f6 !important;
@@ -1503,9 +1508,24 @@ footer span {
         gap: 0.5rem;
     }
     footer {
-        font-size: 0.95rem;
-        padding: 1.5rem 0 1.5rem 0;
+        font-size: 0.8rem;
+        padding: 2.5rem 0 2.5rem 0 !important;
         border-top: 2px solid #e9ecef;
+        background: #222 !important;
+        color: #fff !important;
+        position: relative !important;
+        z-index: 100 !important;
+        min-height: 3.5rem !important;
+        height: auto !important;
+        overflow: visible !important;
+        box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+        display: block;
+        text-align: center;
+        white-space: nowrap;
+    }
+    footer span {
+        vertical-align: middle;
+        white-space: nowrap;
     }
     [data-theme="dark"] footer {
         background: #f3f4f6 !important;
@@ -1597,20 +1617,20 @@ footer span {
 
 /* Enhance existing animations */
 .project-card, .skills-category, .skill-item, .about-content, .hero-content, .contact-form {
-    opacity: 1 !important;
+    opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .project-card.animate, .skills-category.animate, .skill-item.animate, 
 .about-content.animate, .hero-content.animate, .contact-form.animate {
-    opacity: 1 !important;
+    opacity: 1;
     transform: translateY(0);
 }
 
 /* Stagger animations for skills grid */
 .skills-grid .skill-item {
-    opacity: 1 !important;
+    opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
@@ -1635,14 +1655,4 @@ footer span {
 .project-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-html, body {
-    height: 100%;
-}
-main {
-    flex: 1 0 auto;
-}
-footer {
-    flex-shrink: 0;
 } 
