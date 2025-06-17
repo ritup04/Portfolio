@@ -391,7 +391,7 @@ body {
 
 /* Projects Section */
 .projects {
-    padding: 100px 0;
+    padding: 40px 0;
     background: var(--section-bg);
     position: relative;
     overflow: hidden;
@@ -407,7 +407,7 @@ body {
     gap: 2rem;
     margin-top: 2rem;
     position: relative;
-    z-index: 1;
+    z-index: 1000;
 }
 
 .project-card {
@@ -1594,20 +1594,20 @@ footer span {
 
 /* Enhance existing animations */
 .project-card, .skills-category, .skill-item, .about-content, .hero-content, .contact-form {
-    opacity: 0;
+    opacity: 1 !important;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .project-card.animate, .skills-category.animate, .skill-item.animate, 
 .about-content.animate, .hero-content.animate, .contact-form.animate {
-    opacity: 1;
+    opacity: 1 !important;
     transform: translateY(0);
 }
 
 /* Stagger animations for skills grid */
 .skills-grid .skill-item {
-    opacity: 0;
+    opacity: 1 !important;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
