@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="picon.png">
+    <link rel="icon" type="image/png" href="icon.png">
 </head>
 <body>
     <nav class="navbar">
@@ -274,7 +274,7 @@
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
-                <form action="https://formspree.io/f/yourFormID" method="POST" class="contact-form" autoComplete="off">
+                <form id="contact-form" method="POST" class="contact-form" autoComplete="off">
                     <div class="form-group">
                         <span class="input-icon"><i class="fas fa-user"></i></span>
                         <input type="text" name="name" required placeholder=" "/>
@@ -292,6 +292,7 @@
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
+                <div id="form-message" class="form-message"></div>
             </div>
         </div>
     </section>

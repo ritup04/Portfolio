@@ -53,12 +53,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Form submission
 const contactForm = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        // Add your form submission logic here
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
+        const formData = new FormData(this);
+        fetch('https://formspree.io/f/xovwegrp', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                formMessage.textContent = 'Thank you for your message! I will get back to you soon.';
+                formMessage.style.color = '#10B981';
+                contactForm.reset();
+            } else {
+                formMessage.textContent = 'Oops! Something went wrong. Please try again.';
+                formMessage.style.color = '#e11d48';
+            }
+        })
+        .catch(() => {
+            formMessage.textContent = 'Oops! Something went wrong. Please try again.';
+            formMessage.style.color = '#e11d48';
+        });
     });
 }
 
