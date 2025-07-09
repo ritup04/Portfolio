@@ -21,7 +21,7 @@ A modern and responsive personal portfolio website to showcase skills, projects,
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/ritup04/Portfolio.git
-   cd your-repo
+   cd Portfolio
    ```
 
 2. **Open the project:**
