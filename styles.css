@@ -5,44 +5,45 @@
 }
 
 :root {
-    /* Light Theme - Vibrant Colors */
-    --primary-color: #6C63FF;
-    --secondary-color: #FF6584;
-    --accent-color: #4ECDC4;
-    --text-color: #2D3436;
+    /* Light Theme - Neo Aurora */
+    --primary-color: #7C3AED; /* Violet */
+    --secondary-color: #EC4899; /* Pink */
+    --accent-color: #22D3EE; /* Cyan */
+    --text-color: #0F172A; /* Slate-900 */
     --bg-color: #FFFFFF;
-    --card-bg: #F8F9FA;
-    --border-color: #E9ECEF;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --gradient-start: #6C63FF;
-    --gradient-end: #FF6584;
-    --card-shadow: 0 4px 6px var(--shadow-color);
-    --hover-shadow: 0 8px 15px var(--shadow-color);
-    --light-text: #6b7280;
+    --card-bg: #F7F7FB;
+    --border-color: #E6E8EF;
+    --shadow-color: rgba(2, 6, 23, 0.08);
+    --gradient-start: #1E3A8A; /* Indigo */
+    --gradient-end: #7C3AED; /* Violet */
+    --card-shadow: 0 4px 12px var(--shadow-color);
+    --hover-shadow: 0 10px 24px var(--shadow-color);
+    --light-text: #64748B;
     --background: #ffffff;
-    --section-bg: #f8fafc;
-    --gradient: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
-    --gradient-alt: linear-gradient(135deg, #06b6d4 0%, #7c3aed 100%);
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --section-bg: #F3F4F8;
+    --gradient: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 45%, #ec4899 100%);
+    --gradient-alt: linear-gradient(135deg, #22d3ee 0%, #7c3aed 100%);
+    --shadow: 0 6px 16px rgba(2, 6, 23, 0.08);
     --transition: all 0.3s ease;
     --border-radius: 12px;
+    --nav-offset: 68px;
 }
 
 [data-theme="dark"] {
-    --primary-color: #8B5CF6;
-    --secondary-color: #EC4899;
-    --accent-color: #10B981;
-    --text-color: #F3F4F6;
-    --bg-color: #1F2937;
-    --card-bg: #2D3748;
-    --border-color: #4B5563;
-    --shadow-color: rgba(0, 0, 0, 0.3);
+    --primary-color: #A78BFA; /* Violet glow */
+    --secondary-color: #F472B6; /* Pink glow */
+    --accent-color: #22D3EE; /* Cyan */
+    --text-color: #E5E7EB;
+    --bg-color: #0B1020; /* Deep space blue */
+    --card-bg: #12172A;
+    --border-color: rgba(148, 163, 184, 0.18);
+    --shadow-color: rgba(0, 0, 0, 0.35);
     --light-text: #9ca3af;
-    --background: #0f172a;     /* Dark Blue */
-    --section-bg: #1e293b;     /* Darker Blue */
-    --gradient: linear-gradient(135deg, #8b5cf6 0%, #f472b6 100%);
-    --gradient-alt: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%);
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --background: #0A0F1F;
+    --section-bg: #0E1426;
+    --gradient: linear-gradient(135deg, #0ea5e9 0%, #7c3aed 50%, #ec4899 100%);
+    --gradient-alt: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
+    --shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 
 html {
@@ -98,12 +99,12 @@ body {
     left: 0;
     width: 100vw;
     z-index: 3000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(2,6,23,0.12);
     background: var(--bg-color);
 }
 
 [data-theme="dark"] .navbar {
-    background: rgba(31, 41, 55, 0.95);
+    background: rgba(10, 15, 31, 0.85);
 }
 
 .navbar .container {
@@ -182,14 +183,63 @@ body {
 
 /* Hero Section */
 .hero {
-    padding-top: 120px;
-    background: linear-gradient(135deg, var(--bg-color) 0%, var(--card-bg) 100%);
+    /* Fill viewport below fixed nav and center content */
+    min-height: calc(100vh - var(--nav-offset));
+    margin-top: var(--nav-offset);
+    display: grid;
+    place-items: center;
+    padding-top: 0;
+    background: linear-gradient(135deg, #0ea5e911 0%, #7c3aed0f 50%, #ec48990f 100%);
+    background-size: 200% 200%;
+    animation: auroraPan 18s ease-in-out infinite alternate;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ensure hero content is strongly centered horizontally */
+.hero .container {
+    display: grid;
+    justify-items: center;
 }
 
 .hero-content {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Subtle animated glow layers */
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 60vmax;
+    height: 60vmax;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.hero::before {
+    background: radial-gradient(circle at 30% 30%, #22d3ee55, transparent 60%);
+    top: -20vmax;
+    left: -20vmax;
+    animation: floatGlow1 22s ease-in-out infinite;
+}
+
+.hero::after {
+    background: radial-gradient(circle at 70% 70%, #ec489955, transparent 60%);
+    bottom: -25vmax;
+    right: -25vmax;
+    animation: floatGlow2 26s ease-in-out infinite;
+}
+
+/* Animate the highlighted name */
+.hero h1 .highlight {
+    background-size: 200% 100%;
+    animation: textGradientShift 8s ease-in-out infinite;
 }
 
 .hero h1 {
@@ -297,6 +347,121 @@ body {
 .education {
     padding: 100px 0;
     background: var(--bg-color);
+}
+
+/* Experience Section - modern cards */
+.experience {
+    padding: 100px 0;
+    background: var(--section-bg);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.experience-card {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.6s ease;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(1200px 200px at -10% -10%, rgba(124,58,237,0.12), transparent 50%),
+                radial-gradient(1200px 200px at 110% 110%, rgba(236,72,153,0.12), transparent 50%);
+    pointer-events: none;
+}
+
+.experience-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.experience-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.experience-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.experience-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: white;
+    color: #fff;
+}
+
+.experience-icon img {
+    width: 24px;
+    height: 24px;
+    /* filter: brightness(0) invert(1); */
+}
+
+.experience-role {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.experience-company {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--light-text);
+}
+
+.experience-badge {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.experience-highlights {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1rem;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.experience-highlights li {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 0.6rem;
+    color: var(--text-color);
+}
+
+.experience-highlights i {
+    color: var(--primary-color);
+    margin-top: 0.15rem;
+}
+
+@media (max-width: 768px) {
+    :root { --nav-offset: 60px; }
+    .experience-grid { grid-template-columns: 1fr; }
 }
 
 .education-timeline {
@@ -412,7 +577,7 @@ body {
     background: var(--card-bg);
     border-radius: 18px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 2px 8px 0 rgba(108,99,255,0.06);
+    box-shadow: 0 2px 10px 0 rgba(2,6,23,0.08);
     padding: 2rem 1.5rem 1.5rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -519,7 +684,7 @@ body {
 
 /* Animate project card on hover */
 .project-card:hover {
-    box-shadow: 0 8px 24px 0 rgba(108,99,255,0.10);
+    box-shadow: 0 14px 34px 0 rgba(2,6,23,0.16);
     transform: translateY(-6px) scale(1.01);
 }
 
@@ -757,12 +922,14 @@ body {
     .nav-links.active {
         display: flex;
     }
-    body, .main-content, .hero, .about, .education, .skills, .projects, .contact {
+    body, .main-content, .about, .education, .skills, .projects, .contact {
         padding-top: 60px !important;
     }
+    .hero { min-height: calc(100vh - var(--nav-offset)); margin-top: var(--nav-offset); padding-top: 0 !important; }
 }
 
 @media (max-width: 480px) {
+    :root { --nav-offset: 52px; }
     .hamburger {
         width: 32px;
         height: 32px;
@@ -776,9 +943,10 @@ body {
         min-height: calc(100vh - 52px);
         padding: 0.7rem 0 0.7rem 1rem;
     }
-    body, .main-content, .hero, .about, .education, .skills, .projects, .contact {
+    body, .main-content, .about, .education, .skills, .projects, .contact {
         padding-top: 52px !important;
     }
+    .hero { min-height: calc(100vh - var(--nav-offset)); margin-top: var(--nav-offset); padding-top: 0 !important; }
 }
 
 /* Contact Section */
@@ -990,6 +1158,28 @@ footer span {
     }
 }
 
+/* Hero animations */
+@keyframes auroraPan {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 100%; }
+}
+
+@keyframes floatGlow1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, -10px) scale(1.05); }
+}
+
+@keyframes floatGlow2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-15px, 10px) scale(1.08); }
+}
+
+@keyframes textGradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 /* Timeline Animation */
 .timeline-item {
     position: relative;

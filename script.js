@@ -98,7 +98,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all animated elements
-document.querySelectorAll('.project-card, .timeline-item, .skills-category, .skill-item, .about-content, .hero-content, .contact-form').forEach((element, index) => {
+document.querySelectorAll('.project-card, .timeline-item, .skills-category, .skill-item, .about-content, .hero-content, .contact-form, .experience-card').forEach((element, index) => {
     if (element.classList.contains('timeline-item')) {
         element.dataset.delay = index * 0.2;
     }
@@ -120,6 +120,14 @@ document.querySelectorAll('.hero h1, .hero .subtitle, .hero .description').forEa
 document.querySelectorAll('.cta-buttons .btn').forEach((element, index) => {
     element.classList.add('fade-in-up');
     element.style.animationDelay = `${0.6 + index * 0.2}s`;
+});
+
+// Stagger the hero content slightly more for emphasis on load
+window.addEventListener('load', () => {
+    const heroEls = document.querySelectorAll('.hero h1, .hero .subtitle, .hero .description, .cta-buttons .btn');
+    heroEls.forEach((el, idx) => {
+        el.style.animationDelay = `${0.1 * idx}s`;
+    });
 });
 
 // Add active class to navigation links based on scroll position
